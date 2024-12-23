@@ -1,0 +1,16 @@
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
+
+def main():
+    print("Vowel Counter")
+    user_input = input("Enter a string: ")
+    num_vowels = count_vowels(user_input)
+    print(f"The string contains {num_vowels} vowels.")
+
+if __name__ == "__main__":
+    main()
