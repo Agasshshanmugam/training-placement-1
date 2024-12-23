@@ -1,0 +1,22 @@
+def find_largest(numbers):
+    largest = numbers[0]
+    for num in numbers:
+        if num > largest:
+            largest = num
+    return largest
+
+def main():
+    print("Find the Largest Number")
+    try:
+        user_input = input("Enter a list of numbers separated by spaces: ")
+        numbers = list(map(float, user_input.split()))
+        if not numbers:
+            print("The list is empty. Please provide valid numbers.")
+        else:
+            largest = find_largest(numbers)
+            print(f"The largest number in the list is: {largest}")
+    except ValueError:
+        print("Invalid input. Please enter numeric values only.")
+
+if __name__ == "__main__":
+    main()
