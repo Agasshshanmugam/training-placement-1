@@ -1,0 +1,25 @@
+import random
+
+def generate_random_numbers(n, start, end):
+    return [random.randint(start, end) for _ in range(n)]
+
+def calculate_average(numbers):
+    return sum(numbers) / len(numbers)
+
+def find_min_max(numbers):
+    return min(numbers), max(numbers)
+
+def main():
+    n = int(input("Enter the number of random numbers: "))
+    start = int(input("Enter the start of the range: "))
+    end = int(input("Enter the end of the range: "))
+    numbers = generate_random_numbers(n, start, end)
+    print("Generated numbers:", numbers)
+    average = calculate_average(numbers)
+    minimum, maximum = find_min_max(numbers)
+    print("Average:", average)
+    print("Minimum:", minimum)
+    print("Maximum:", maximum)
+
+if __name__ == "__main__":
+    main()
