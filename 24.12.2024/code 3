@@ -1,0 +1,30 @@
+import random
+
+def roll_dice():
+    return random.randint(1, 6)
+
+def play_game():
+    player_score = 0
+    computer_score = 0
+    for _ in range(5):
+        player_roll = roll_dice()
+        computer_roll = roll_dice()
+        if player_roll > computer_roll:
+            player_score += 1
+        elif computer_roll > player_roll:
+            computer_score += 1
+    return player_score, computer_score
+
+def main():
+    player, computer = play_game()
+    print("Player score:", player)
+    print("Computer score:", computer)
+    if player > computer:
+        print("Player wins!")
+    elif computer > player:
+        print("Computer wins!")
+    else:
+        print("It's a tie!")
+
+if __name__ == "__main__":
+    main()
