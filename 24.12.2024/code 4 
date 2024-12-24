@@ -1,0 +1,17 @@
+def fibonacci(n):
+    sequence = [0, 1]
+    for i in range(2, n):
+        sequence.append(sequence[i - 1] + sequence[i - 2])
+    return sequence
+
+def main():
+    n = int(input("Enter the number of Fibonacci numbers to generate: "))
+    if n <= 0:
+        print("Please enter a positive number.")
+        return
+    result = fibonacci(n)
+    print(f"First {n} Fibonacci numbers:")
+    print(result)
+
+if __name__ == "__main__":
+    main()
