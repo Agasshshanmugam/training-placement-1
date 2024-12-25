@@ -1,0 +1,23 @@
+import random
+import string
+
+def generate_password(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.choice(characters) for _ in range(length))
+
+def main():
+    print("Welcome to the Password Generator!")
+    while True:
+        try:
+            length = int(input("Enter password length (minimum 8): "))
+            if length < 8:
+                print("Password length must be at least 8.")
+                continue
+            break
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+    password = generate_password(length)
+    print(f"Your generated password is: {password}")
+
+if __name__ == "__main__":
+    main()
